@@ -1,6 +1,6 @@
 # UI parity
 
-> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-25 · **Change:** minor (AutoSum over a selected row puts its total to the right) · **Target:** Microsoft Excel (Microsoft 365), Excel for Mac 16.113.4
+> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-25 · **Change:** minor (AutoSum over a selected row puts its total to the right; New Formatting Rule offers every rule type with a format editor; Conditional Formatting Rules Manager edits, duplicates, reorders, re-targets rules and has Stop If True) · **Target:** Microsoft Excel (Microsoft 365), Excel for Mac 16.113.4
 
 Interaction, controls and feel, against Excel. Part of [target-app-parity.md](target-app-parity.md).
 **UI/UX fidelity: ~55% ready, 50–80 h** (estimated). Ribbon command coverage is measured
@@ -152,7 +152,9 @@ a character (e.g. Ctrl+Alt+A for `ä`) never trigger a shortcut, Ctrl+letter one
 ## Dialogs
 
 Format Cells, Insert Function/Formula Builder, Find and Replace, Go To and Go To Special, Sort,
-Name Manager, Data Validation, Paste Special, Conditional Formatting manager, Page Setup, Goal
+Name Manager, Data Validation, Paste Special, Conditional Formatting (New/Edit Formatting Rule with
+the six rule types and a format editor; Rules Manager with selection/sheet filter, New/Edit/Delete/
+Duplicate, priority arrows, Applies to, Stop If True, OK/Cancel), Page Setup, Goal
 Seek, Scenario Manager, Data Analysis, Forecast Sheet and others exist. Missing or partial: Options,
 Solver, Power Query editor, Insert Object, Equation editor, Protect/Allow Edit Ranges,
 Workbook Links, Accessibility checker. Like Excel's, every dialog opens centred and moves by its
@@ -206,6 +208,7 @@ scrollbar bugs 2–4 · pixel/feel pass against observed Excel 7–12.
 | 2026-10-22 | minor | One native window per workbook window on the desktop: per-window drafts, dialogs and ribbons; menu bar commands go to the focused window; closing one of several windows on a workbook doesn't ask; Quit asks in each unsaved workbook's window; the last window closed quits (Windows, Linux) or leaves macOS running |
 | 2026-10-22 | minor | New Window opens a second window on the same workbook instead of a copy that saved over the original; windows keep their own selection, sheet and scroll; titles Name:1 / Name:2; Switch Windows, Hide and Unhide work by window; File › Close closes one window of several without asking |
 | 2026-10-22 | minor | New workbook no longer loses the first one: the cell being typed is entered into its own workbook before any File or window command (an entry the workbook refuses stays open and the command doesn't run; an untouched F2 draft changes nothing), the editor is tied to its workbook, View › Switch Windows and the macOS Window menu list the open workbooks, and the macOS Quit item asks about unsaved workbooks like the close button |
+| 2026-10-21 | minor | Conditional formatting: New Rule… opens New Formatting Rule with the six rule types (cell values: colour scales, data bars, icon sets with their thresholds; cell value/text/dates/blanks/errors; top/bottom; above/below average and standard deviations; unique/duplicate; formula, with a hint about relative references) and a format editor (presets, fill, font colour, border, bold/italic/underline/strikethrough, preview). Manage Rules shows a table (rule, format preview, applies to, Stop If True), filters by Current Selection or This Worksheet, edits, duplicates, deletes and reorders rules, edits Applies to, and Cancel restores the rules it opened with. Labels translated in Chinese, Czech, French, German, Japanese, Korean, Portuguese, Russian, Serbian and Spanish |
 | 2026-10-21 | minor | Background error checking, first part (#1994): a constant whose text would be a number if typed (signs, thousands, currency, percent, exponent, parenthesised negative) gets Excel's green corner triangle; the active cell then shows a warning button whose menu names the problem and offers Convert to Number for the selection (`formulas.convertToNumber`). Dates, times and fractions kept as text and formula results are not flagged, as in Excel |
 | 2026-10-21 | minor | Paste Special laid out as Excel's: Paste and Operation options each in two columns inside a frame, Skip blanks and Transpose side by side, Paste Link as a button that pastes references at once; labels translated (the generic form didn't translate them) and the window no longer runs past the screen |
 | 2026-10-21 | minor | Form dialogs (conditional-format quick rules, New Name, Remove Duplicates, Text to Columns and every other `Dialog::form`) fit their content: OK and Cancel sit in a row under the last field instead of a right-to-left layout that took the screen's whole height and left the buttons floating halfway down |
