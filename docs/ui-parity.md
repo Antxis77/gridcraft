@@ -1,6 +1,6 @@
 # UI parity
 
-> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-19 · **Change:** minor (Ctrl+Enter fill gives each cell the automatic number format typing gives it; keytip letters typed with Alt held, #1846) · **Target:** Microsoft Excel (Microsoft 365), Excel for Mac 16.113.4
+> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-21 · **Change:** minor (New Formatting Rule offers every rule type with a format editor; Conditional Formatting Rules Manager edits, duplicates, reorders, re-targets rules and has Stop If True) · **Target:** Microsoft Excel (Microsoft 365), Excel for Mac 16.113.4
 
 Interaction, controls and feel, against Excel. Part of [target-app-parity.md](target-app-parity.md).
 **UI/UX fidelity: ~55% ready, 50–80 h** (estimated). Ribbon command coverage is measured
@@ -134,7 +134,9 @@ text, so AltGr symbols (e.g. `~` on a German layout) never trigger a shortcut.
 ## Dialogs
 
 Format Cells, Insert Function/Formula Builder, Find and Replace, Go To and Go To Special, Sort,
-Name Manager, Data Validation, Paste Special, Conditional Formatting manager, Page Setup, Goal
+Name Manager, Data Validation, Paste Special, Conditional Formatting (New/Edit Formatting Rule with
+the six rule types and a format editor; Rules Manager with selection/sheet filter, New/Edit/Delete/
+Duplicate, priority arrows, Applies to, Stop If True, OK/Cancel), Page Setup, Goal
 Seek, Scenario Manager, Data Analysis, Forecast Sheet and others exist. Missing or partial: Options,
 Solver, Power Query editor, Insert Object, Equation editor, Protect/Allow Edit Ranges,
 Workbook Links, Accessibility checker.
@@ -161,6 +163,7 @@ scrollbar bugs 2–4 · pixel/feel pass against observed Excel 7–12.
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-21 | minor | Conditional formatting: New Rule… opens New Formatting Rule with the six rule types (cell values: colour scales, data bars, icon sets with their thresholds; cell value/text/dates/blanks/errors; top/bottom; above/below average and standard deviations; unique/duplicate; formula, with a hint about relative references) and a format editor (presets, fill, font colour, border, bold/italic/underline/strikethrough, preview). Manage Rules shows a table (rule, format preview, applies to, Stop If True), filters by Current Selection or This Worksheet, edits, duplicates, deletes and reorders rules, edits Applies to, and Cancel restores the rules it opened with. French labels added |
 | 2026-10-19 | minor | Ctrl+Enter (`range.fill`) gives each cell what typing the input there gives: a General cell gets the automatic number format (`5%`, `$5`, `3/4/2026`, `=TODAY()`) even when it already held a value, and a cell with its own format, a formatted row or column, or Text keeps it. Cells that held a value used to keep General (`5%` showed 0.05), and empty cells took the active cell's format |
 | 2026-10-18 | minor | Keytip letters typed with left Alt held continue the sequence (Alt+H, O, A / Alt+H, O, I ran nothing before: Alt+letter cancelled keytips); other Alt combinations, AltGr and macOS Option are unchanged (#1846) |
 | 2026-10-12 | minor | The File view's recent list tells when each workbook was last changed, read off the UI thread |

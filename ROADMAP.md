@@ -132,6 +132,7 @@ Ranked; estimates in Opus 5.5 agent-hours. Detail and the full beta-gate list in
 
 | Date | What landed |
 |---|---|
+| 2026-10-21 | Conditional formatting: a full New/Edit Formatting Rule dialog (six rule types, format editor with preview) and a Rules Manager table (edit, duplicate, reorder, Applies to, Stop If True, Cancel restores); `home.manageRules` gains `show`, `update`, `duplicate` and `set`, and lists each rule's editable params |
 | 2026-10-12 | Rows auto-fit oversized fonts: opening a file and whole-row/column formatting grow non-custom rows to their tallest font (#833) |
 | 2026-10-12 | Number formats: parsing a format code is linear in its length (long runs of `[`, `,` or `/` no longer take quadratic time), and an unclosed `[` is a literal when splitting sections as well as when tokenizing (#810) |
 | 2026-10-12 | Number formats: a fraction denominator with 65,536 zeros no longer crashes; format codes are capped at 255 characters like Excel (longer codes display as General, `TEXT` gives `#VALUE!`) (#807) |
@@ -193,6 +194,7 @@ Ranked; estimates in Opus 5.5 agent-hours. Detail and the full beta-gate list in
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-21 | minor | Progress log: conditional formatting rule dialogs |
 | 2026-10-12 | minor | Rows auto-fit oversized fonts on open and whole-row/column formatting (#833); progress log row |
 | 2026-10-12 | minor | Progress log: multi-area row/column delete (#758) |
 | 2026-10-12 | trivial | Progress log: XLSX chart sheets kept on save (#727) |
