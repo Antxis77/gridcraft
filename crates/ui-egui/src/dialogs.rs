@@ -927,7 +927,22 @@ impl Dialog {
                 dialog.result = Some(json!(names));
                 dialog
             }
-            "manageRules" => Dialog::custom("manageRules", "Conditional Formatting Rules Manager", json!({})),
+            "manageRules" => {
+                // What Cancel puts back: the active sheet's rules as the dialog opens.
+                let sheet = app.session.active().map(|doc| doc.wb.active_sheet());
+                // Current Selection and New Rule… keep to the selection the dialog opened with.
+                let selection = app.session.active().map(|doc| doc.selection.ranges.iter().map(|r| r.a1()).collect::<Vec<_>>().join(","));
+                let now = app.session.run("home.manageRules", json!({"sheet": sheet})).unwrap_or(Json::Null);
+                let snapshot: Vec<Json> = now["rules"]
+                    .as_array()
+                    .map(|a| a.iter().map(|r| json!({"rule": r["rule"], "appliesTo": r["appliesTo"], "stopIfTrue": r["stopIfTrue"]})).collect())
+                    .unwrap_or_default();
+                Dialog::custom(
+                    "manageRules",
+                    "Conditional Formatting Rules Manager",
+                    json!({"show": "selection", "sheet": sheet, "selection": selection, "snapshot": snapshot}),
+                )
+            }
             "newFormattingRule" => {
                 // New Rule… starts from Format only cells that contain › Cell Value between;
                 // Manage Rules › Edit Rule… passes the rule's index and params.
