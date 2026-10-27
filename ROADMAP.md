@@ -2,7 +2,7 @@
 
 **Stage: alpha** · next: beta, ~25 points of "ready for real work" and ~160–240 h away
 
-> **Last reviewed:** 2026-10-11 · **Last updated:** 2026-10-27 · **Change:** minor (New Rule… opens New Formatting Rule with every rule type and a format editor; Conditional Formatting Rules Manager edits, duplicates, reorders and re-targets rules) · **Target:** Microsoft Excel (Microsoft 365)
+> **Last reviewed:** 2026-10-11 · **Last updated:** 2026-10-27 · **Change:** minor (New Rule… opens New Formatting Rule with every rule type and a format editor; Conditional Formatting Rules Manager edits, duplicates, reorders and re-targets rules; the rule dialogs translated in ten languages) · **Target:** Microsoft Excel (Microsoft 365)
 
 GridCraft aims at full Microsoft Excel parity, and at being better in places: faster, open (XLSX
 is the native format), fully scriptable by agents (MCP, control channel, CLI), and on the web.
@@ -135,6 +135,7 @@ Ranked; estimates in Opus 5.5 agent-hours. Detail and the full beta-gate list in
 
 | Date | What landed |
 |---|---|
+| 2026-10-27 | The conditional formatting rule dialogs (New/Edit Formatting Rule, Rules Manager) are translated in Chinese, Czech, French, German, Japanese, Korean, Portuguese (Brazil), Russian, Serbian and Spanish |
 | 2026-10-27 | Conditional Formatting Rules Manager: a table of the rules with their format and Applies to, filtered by Current Selection or This Worksheet; New, Edit, Delete and Duplicate Rule, Move Up/Move Down, Stop If True, and Cancel puts back the rules it opened with |
 | 2026-10-27 | Conditional formatting: New Rule… opens a full New Formatting Rule dialog (six rule types, format editor with preview), also used as Edit Formatting Rule |
 | 2026-10-27 | Conditional formatting commands edit rules: `home.conditionalFormat` takes Stop If True, plain format overrides (fill, font colour, border, font styles) and colour-scale/data-bar thresholds, and checks icon set thresholds; `home.manageRules` gains `show`, `selection`, `update`, `duplicate` and `set` and lists each rule's editable params, on any sheet |
@@ -245,6 +246,7 @@ Ranked; estimates in Opus 5.5 agent-hours. Detail and the full beta-gate list in
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-27 | minor | Progress log: conditional formatting rule dialogs translated |
 | 2026-10-27 | minor | Progress log: Conditional Formatting Rules Manager |
 | 2026-10-27 | minor | Progress log: New Formatting Rule dialog |
 | 2026-10-27 | minor | Progress log: conditional formatting rule editing commands |
